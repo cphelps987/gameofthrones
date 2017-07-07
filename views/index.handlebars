@@ -1,0 +1,22 @@
+<form action="/" method="POST">
+    <textarea type="text" name="task"></textarea>
+
+    <button type="submit">Submit</button>
+</form>
+
+{{#battles}}
+    <h1>Character Name: {{this.name}}</h1>
+    <p>Location of Battle: {{this.location}}</p>
+    <p>Attacking King: {{this.attacker_king}}</p>
+    <p>Defending King: {{this.defender_king}}</p>
+    <p>Outcome: {{this.attacker_outcome}}</p>
+    <p>Note: {{this.note}}</p>
+    {{#if this.isAlive}}
+        <p>{{this.name}} is Alive</p>
+    {{else}}
+        <p>{{this.name}} is Dead</p>
+    {{/if}}
+
+{{/battles}}
+
+
