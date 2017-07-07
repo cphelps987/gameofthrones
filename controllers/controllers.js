@@ -2,12 +2,18 @@ var mysql = require('mysql');
 
 module.exports = function(app) {
 
-    var connection = mysql.createConnection({
-        host    : "localhost",
-        user    : "root",
-        password: "",
-        database: "gameofthrones"
-    });
+    var connection;
+
+    if (process.env.JAWSDB_URL) {
+        connection = mysql.createConnection(process.env.JAWSDB_URL);
+    } else{
+        connection = mysql.createConnection({
+            host    : "localhost",
+            user    : "root",
+            password: "",
+            database: "gameofthrones"
+        });
+    }
 
     connection.connect(function (err) {
         if (err) {
