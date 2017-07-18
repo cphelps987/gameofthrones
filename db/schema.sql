@@ -20,12 +20,14 @@ CREATE TABLE deaths
 (
 	id int NOT NULL AUTO_INCREMENT,
 	name VARCHAR (255) NOT NULL,
-	allegiances VARCHAR (255)
+	allegiances VARCHAR (255),
+	PRIMARY KEY (id)
 );
 
 CREATE TABLE predictions
 (
   id int NOT NULL AUTO_INCREMENT,
   name VARCHAR (255) NOT NULL,
-  isAlive INT (11)
+  isAlive INT (11),
+  PRIMARY KEY (id)
 );
